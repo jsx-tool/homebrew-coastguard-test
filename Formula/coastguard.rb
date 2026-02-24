@@ -10,18 +10,18 @@ class Coastguard < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/jsx-tool/coast-cli/releases/download/v0.0.1/coastguard-darwin-amd64"
-      sha256 "29227af02e34d612deda33cda8e7835ca16c00fe051a54de9242aaf1df557851"
+      sha256 "7eea72a582551b8a569de8e4f247edeb5b32379d58cdf91150f63f42bcfe69f4"
 
       define_method(:install) do
-        bin.install "coastguard"
+        bin.install Dir["coastguard*"].first => "coastguard"
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/jsx-tool/coast-cli/releases/download/v0.0.1/coastguard-darwin-arm64"
-      sha256 "4fc2ee94a4d3f9bce5c62842eeaf9c3f1f4630f79dfe00a909547f2b94a5b0f5"
+      sha256 "819b7fbda36363adb62ed3df4d4c5cd0e023c2348dd174a555800a012bcc6f1c"
 
       define_method(:install) do
-        bin.install "coastguard"
+        bin.install Dir["coastguard*"].first => "coastguard"
       end
     end
   end
@@ -29,16 +29,16 @@ class Coastguard < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/jsx-tool/coast-cli/releases/download/v0.0.1/coastguard-linux-amd64"
-      sha256 "90f9d1263d3ed1b7f19139e2a47db80e226290abc71e37755631787a63795358"
+      sha256 "39a788d4377832c606b74445999185ee7a30355ce51d608cc2aefa2139046392"
       define_method(:install) do
-        bin.install "coastguard"
+        bin.install Dir["coastguard*"].first => "coastguard"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/jsx-tool/coast-cli/releases/download/v0.0.1/coastguard-linux-arm64"
-      sha256 "dfacc6f0af531bc2c9c38584b5b3cb43acc9875f190b6ff3fe22e890951749cb"
+      sha256 "b60e7936dd668ac78d5697058ce612add4bf0ffa8449e719b9a16676c027d270"
       define_method(:install) do
-        bin.install "coastguard"
+        bin.install Dir["coastguard*"].first => "coastguard"
       end
     end
   end
